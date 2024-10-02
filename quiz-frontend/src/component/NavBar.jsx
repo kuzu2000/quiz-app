@@ -63,7 +63,9 @@ const NavBar = () => {
 
   useEffect(() => {
     if (_id) {
-      const newSocket = io('http://localhost:3500');
+      const newSocket = io('https://quiz-app-ty6t.onrender.com', {
+        transports: ["websocket"]
+      });
       newSocket.emit('registerUser', _id);
 
       newSocket.on('levelUp', (data) => {
