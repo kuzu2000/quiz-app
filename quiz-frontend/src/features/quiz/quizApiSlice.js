@@ -1,6 +1,6 @@
 import { apiSlice } from "../../app/api/apiSlice";
 
-const quizApiSlice = apiSlice.injectEndpoints({
+export const quizApiSlice = apiSlice.injectEndpoints({
     endpoints: builder => ({
         getQuizByCategory: builder.query({
             query: (category) => `/quiz?category=${category}`,
