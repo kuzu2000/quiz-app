@@ -5,14 +5,11 @@ const QuizCategory = () => {
 
   const { data, isLoading, isError } = useGetCategoryQuery();
 
-  if (isLoading) {
-    return <h2>Loading...</h2>
-  }
-
   return (
     <main>
       <div className="quiz-category">
         <h1>Quiz Category</h1>
+        {isLoading && <h2>Loading...</h2>}
         <ul className="quiz-category-list">
           {data?.results.map((category) => (
             <Link
